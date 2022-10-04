@@ -19,7 +19,7 @@ public class CategoryController {
     private CategoryService categoryService;
 
     @GetMapping("/all")
-    public List<Category> getAll(){
+    public List<Category> getCategories(){
         return categoryService.getAll();
     }
 
