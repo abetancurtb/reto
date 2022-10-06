@@ -18,7 +18,7 @@ public class Machine implements Serializable {
     private String description;
 
     @ManyToOne
-    @JoinColumn(name = "categoryId")
+    @JoinColumn(name = "category")
     @JsonIgnoreProperties("machines")
     private Category category;
 
@@ -27,7 +27,7 @@ public class Machine implements Serializable {
     private List<Message> messages;
 
     @OneToMany(cascade = {CascadeType.ALL}, mappedBy = "machine")
-    @JsonIgnoreProperties({"machine","messages"})
+    @JsonIgnoreProperties({"machine","reservations"})
     private List<Reservation> reservations;
 
     public Integer getId() {

@@ -34,6 +34,7 @@ public class CategoryService {
         }
     }
 
+
     public Category update(Category p){
         if (p.getId() == null){
             Optional<Category> q = categoryRepository.getCategory(p.getId());
@@ -44,6 +45,10 @@ public class CategoryService {
 
                 if (p.getDescription()!=null){
                     q.get().setDescription(p.getDescription());
+                }
+
+                if (p.getMachines()!=null){
+                    q.get().setMachines(p.getMachines());
                 }
 
                 categoryRepository.save(q.get());

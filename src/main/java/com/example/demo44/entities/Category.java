@@ -21,6 +21,7 @@ public class Category implements Serializable {
     @JsonIgnoreProperties("category")
     private List<Machine> machines;
 
+
     public Integer getId() {
         return id;
     }
