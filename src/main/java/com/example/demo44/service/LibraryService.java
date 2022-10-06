@@ -47,9 +47,7 @@ public class LibraryService {
                 if (p.getTarget()!=null){
                     q.get().setTarget(p.getTarget());
                 }
-                if (p.getCategory()!=null){
-                    q.get().setCategory(p.getCategory());
-                }
+
                 libraryRepository.save(q.get());
                 return  q.get();
             }else{

@@ -18,16 +18,16 @@ public class Machine implements Serializable {
     private String description;
 
     @ManyToOne
-    @JoinColumn(name = "categoryID")
+    @JoinColumn(name = "categoryId")
     @JsonIgnoreProperties("machines")
     private Category category;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "machine")
-    @JsonIgnoreProperties("machine")
+    @JsonIgnoreProperties({"machine","client"})
     private List<Message> messages;
 
-    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "machine")
-    @JsonIgnoreProperties("machine")
+    @OneToMany(cascade = {CascadeType.ALL}, mappedBy = "machine")
+    @JsonIgnoreProperties({"machine","messages"})
     private List<Reservation> reservations;
 
     public Integer getId() {

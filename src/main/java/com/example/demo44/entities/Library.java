@@ -15,10 +15,6 @@ public class Library implements Serializable {
     private String target;
     private Integer description;
 
-    @ManyToOne
-    @JoinColumn(name = "categoryId")
-    @JsonIgnoreProperties("products")
-    private Category category;
 
     public Integer getId() {
         return id;
@@ -52,11 +48,5 @@ public class Library implements Serializable {
         this.description = description;
     }
 
-    public Category getCategory() {
-        return category;
-    }
 
-    public void setCategory(Category category) {
-        this.category = category;
-    }
 }
