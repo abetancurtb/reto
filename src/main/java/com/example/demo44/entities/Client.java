@@ -29,7 +29,7 @@ public class Client implements Serializable {
         return idClient;
     }
 
-    public void setIdClient(Integer idClient) {
+    public void setId(Integer idClient) {
         this.idClient = idClient;
     }
 
