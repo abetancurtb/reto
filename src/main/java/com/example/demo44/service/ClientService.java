@@ -22,10 +22,10 @@ public class ClientService {
     }
 
     public  Client save(Client p){
-        if (p.getIdClient() == null){
+        if (p.getId() == null){
             return  clientRepository.save(p);
         }else{
-            Optional<Client> e = clientRepository.getClient(p.getIdClient());
+            Optional<Client> e = clientRepository.getClient(p.getId());
             if (e.isPresent()){
                 return p;
             }else{
@@ -35,8 +35,8 @@ public class ClientService {
     }
 
     public Client update(Client p){
-        if (p.getIdClient() == null){
-            Optional<Client> q = clientRepository.getClient(p.getIdClient());
+        if (p.getId() == null){
+            Optional<Client> q = clientRepository.getClient(p.getId());
             if (q.isPresent()){
                 if (p.getName()!=null){
                     q.get().setName(p.getName());
