@@ -46,6 +46,22 @@ public class CateService {
                     q.get().setPruebas(p.getPruebas());
                 }
 
+                if (p.getBrand()!=null){
+                    q.get().setBrand(p.getBrand());
+                }
+
+                if (p.getDescription()!=null){
+                    q.get().setDescription(p.getDescription());
+                }
+
+                if (p.getYear()!=null){
+                    q.get().setYear(p.getYear());
+                }
+
+                if (p.getPruebas()!=null){
+                    q.get().setPruebas(p.getPruebas());
+                }
+
                 cateRepository.save(q.get());
                 return  q.get();
             }else{

@@ -12,6 +12,11 @@ public class Cate implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
+    private String brand;
+
+    private String description;
+
+    private String year;
 
     @ManyToOne
     @JoinColumn(name = "pruebasid")
@@ -32,6 +37,30 @@ public class Cate implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getYear() {
+        return year;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
     }
 
     public Pruebas getPruebas() {
