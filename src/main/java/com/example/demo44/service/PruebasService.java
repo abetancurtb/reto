@@ -46,6 +46,10 @@ public class PruebasService {
                     q.get().setDescription(p.getDescription());
                 }
 
+                if (p.getCates()!=null){
+                    q.get().setCates(p.getCates());
+                }
+
                 pruebasRepository.save(q.get());
                 return  q.get();
             }else{
