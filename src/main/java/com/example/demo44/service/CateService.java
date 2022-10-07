@@ -58,10 +58,6 @@ public class CateService {
                     q.get().setYear(p.getYear());
                 }
 
-                if (p.getPruebas()!=null){
-                    q.get().setPruebas(p.getPruebas());
-                }
-
                 cateRepository.save(q.get());
                 return  q.get();
             }else{
