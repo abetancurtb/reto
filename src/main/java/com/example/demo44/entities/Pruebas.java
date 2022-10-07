@@ -16,8 +16,8 @@ public class Pruebas implements Serializable {
 
     private String description;
 
-    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "Pruebas")
-    @JsonIgnoreProperties("Pruebas")
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "pruebas")
+    @JsonIgnoreProperties("pruebas")
     private List<Cate> cates;
 
     public Integer getId() {
