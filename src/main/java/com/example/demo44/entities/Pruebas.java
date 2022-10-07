@@ -1,25 +1,17 @@
 package com.example.demo44.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.hibernate.annotations.Cascade;
-
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
 
 @Entity
-@Table(name = "category")
-public class Category implements Serializable {
+@Table(name = "pruebas")
+public class Pruebas implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
 
     private String description;
-
-    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "category")
-    @JsonIgnoreProperties("category")
-    private List<Machine> machine;
 
     public Integer getId() {
         return id;
@@ -43,13 +35,5 @@ public class Category implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public List<Machine> getMachines() {
-        return machine;
-    }
-
-    public void setMachines(List<Machine> machines) {
-        this.machine = machines;
     }
 }
