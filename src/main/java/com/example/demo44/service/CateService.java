@@ -1,7 +1,6 @@
 package com.example.demo44.service;
 
 import com.example.demo44.entities.Cate;
-import com.example.demo44.entities.Pruebas;
 import com.example.demo44.repository.CateRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -54,8 +53,8 @@ public class CateService {
                     q.get().setDescription(p.getDescription());
                 }
 
-                if (p.getYear()!=null){
-                    q.get().setYear(p.getYear());
+                if (p.getYears()!=null){
+                    q.get().setYears(p.getYears());
                 }
 
                 cateRepository.save(q.get());

@@ -16,7 +16,7 @@ public class Cate implements Serializable {
 
     private String description;
 
-    private String year;
+    private String years;
 
     @ManyToOne
     @JoinColumn(name = "pruebasid")
@@ -55,12 +55,12 @@ public class Cate implements Serializable {
         this.description = description;
     }
 
-    public String getYear() {
-        return year;
+    public String getYears() {
+        return years;
     }
 
-    public void setYear(String year) {
-        this.year = year;
+    public void setYears(String years) {
+        this.years = years;
     }
 
     public Pruebas getPruebas() {
