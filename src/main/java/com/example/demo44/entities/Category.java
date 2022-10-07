@@ -19,7 +19,11 @@ public class Category implements Serializable {
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "category")
     @JsonIgnoreProperties("category")
-    private List<Machine> machines;
+    private List<Machine> machine;
+
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "category")
+    @JsonIgnoreProperties("category")
+    private List<Product> products;
 
     public Integer getId() {
         return id;
@@ -46,10 +50,10 @@ public class Category implements Serializable {
     }
 
     public List<Machine> getMachines() {
-        return machines;
+        return machine;
     }
 
     public void setMachines(List<Machine> machines) {
-        this.machines = machines;
+        this.machine = machines;
     }
 }

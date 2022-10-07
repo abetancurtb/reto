@@ -12,13 +12,17 @@ public class Machine implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String brand;
-    private String year;
+
     private String name;
+    private String brand;
+
     private String description;
 
+    private String year;
+
+
     @ManyToOne
-    @JoinColumn(name = "category")
+    @JoinColumn(name = "categoryid")
     @JsonIgnoreProperties("machines")
     private Category category;
 
