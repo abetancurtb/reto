@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
 
 @Entity
 @Table(name = "message")
@@ -25,12 +24,12 @@ public class Message implements Serializable {
     private Client client;
 
 
-    public Integer getId() {
+    public Integer getIdMessage() {
         return idMessage;
     }
 
-    public void setId(Integer id) {
-        this.idMessage = id;
+    public void setIdMessage(Integer idMessage) {
+        this.idMessage = idMessage;
     }
 
     public String getMessageText() {
