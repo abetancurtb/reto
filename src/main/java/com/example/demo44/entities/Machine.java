@@ -55,7 +55,8 @@ public class Machine implements Serializable {
     }
 
     public Integer getYear() {
-        return years;
+        Integer year = years;
+        return year;
     }
 
     public void setYear(Integer year) {
