@@ -25,7 +25,7 @@ public class Machine implements Serializable {
     private Category category;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "machine")
-    @JsonIgnoreProperties({"machine","client"})
+    @JsonIgnoreProperties({"machines","client"})
     private List<Message> messages;
 
     @OneToMany(cascade = {CascadeType.ALL}, mappedBy = "machines")
