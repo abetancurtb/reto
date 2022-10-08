@@ -29,7 +29,7 @@ public class Machine implements Serializable {
     private List<Message> messages;
 
     @OneToMany(cascade = {CascadeType.ALL}, mappedBy = "machine")
-    @JsonIgnoreProperties({"machines","messages"})
+    @JsonIgnoreProperties({"machines","messages","reservations"})
     private List<Reservation> reservations;
 
     public Integer getID(){
