@@ -16,7 +16,7 @@ public class Reservation implements Serializable {
     private Date startDate;
     private Date devolutionDate;
 
-    private HttpStatus status;
+    private String status = "created";
 
     public Integer getIdReservation() {
         return idReservation;
@@ -26,11 +26,11 @@ public class Reservation implements Serializable {
         this.idReservation = idReservation;
     }
 
-    public HttpStatus getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(HttpStatus status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
