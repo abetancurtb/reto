@@ -1,5 +1,6 @@
 package com.example.demo44.service;
 
+import com.example.demo44.entities.Category;
 import com.example.demo44.entities.Machine;
 import com.example.demo44.repository.MachineRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,15 +17,15 @@ public class MachineService {
 
     public List<Machine> getAll(){return  machineRepository.getAll(); }
 
-    public Optional<Machine> getMachine(int id){
+    public Optional<Machine> getCategory(int id){
         return machineRepository.getMachine(id);
     }
 
     public  Machine save(Machine p){
-        if (p.getId() == null){
+        if (p.getID() == null){
             return  machineRepository.save(p);
         }else{
-            Optional<Machine> e = machineRepository.getMachine(p.getId());
+            Optional<Machine> e = machineRepository.getMachine(p.getID());
             if (e.isPresent()){
                 return p;
             }else{
@@ -33,22 +34,27 @@ public class MachineService {
         }
     }
 
+
     public Machine update(Machine p){
-        if (p.getId() == null){
-            Optional<Machine> q = machineRepository.getMachine(p.getId());
+        if (p.getID() == null){
+            Optional<Machine> q = machineRepository.getMachine(p.getID());
             if (q.isPresent()){
-                if (p.getBrand()!=null){
-                    q.get().setBrand(p.getBrand());
-                }
-                if (p.getYear()!=null){
-                    q.get().setYear(p.getYear());
-                }
                 if (p.getName()!=null){
                     q.get().setName(p.getName());
                 }
+
+                if (p.getBrand()!=null){
+                    q.get().setBrand(p.getBrand());
+                }
+
+                if (p.getYear()!=null){
+                    q.get().setYear(p.getYear());
+                }
+
                 if (p.getDescription()!=null){
                     q.get().setDescription(p.getDescription());
                 }
+
                 if (p.getCategory()!=null){
                     q.get().setCategory(p.getCategory());
                 }
@@ -58,6 +64,7 @@ public class MachineService {
                 if (p.getReservations()!=null){
                     q.get().setReservations(p.getReservations());
                 }
+
                 machineRepository.save(q.get());
                 return  q.get();
             }else{

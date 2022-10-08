@@ -9,18 +9,13 @@ import java.util.List;
 @Entity
 @Table(name = "machine")
 public class Machine implements Serializable {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  Integer id;
-
-    private String  name;
-
+    private Integer id;
+    private String name;
     private String brand;
-
     private  Integer years;
-
-    private String description;
+    private  String description;
 
     @ManyToOne
     @JoinColumn(name = "categoryid")
@@ -35,7 +30,7 @@ public class Machine implements Serializable {
     @JsonIgnoreProperties({"machines","messages"})
     private List<Reservation> reservations;
 
-    public Integer getId() {
+    public Integer getID(){
         return id;
     }
 

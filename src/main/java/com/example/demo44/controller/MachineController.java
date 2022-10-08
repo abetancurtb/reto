@@ -1,7 +1,7 @@
 package com.example.demo44.controller;
 
 
-import com.example.demo44.entities.Library;
+import com.example.demo44.entities.Category;
 import com.example.demo44.entities.Machine;
 import com.example.demo44.service.MachineService;
 import org.springframework.beans.factory.annotation.Autowired;
