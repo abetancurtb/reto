@@ -14,7 +14,7 @@ public class Machine implements Serializable {
     private Integer id;
     private String name;
     private String brand;
-    private  Integer year;
+    private  Integer years;
     private  String description;
 
     @ManyToOne
@@ -55,11 +55,11 @@ public class Machine implements Serializable {
     }
 
     public Integer getYears() {
-        return year;
+        return years;
     }
 
     public void setYear(Integer year) {
-        this.year = year;
+        this.years = year;
     }
 
     public String getDescription() {

@@ -28,4 +28,10 @@ public class CategoryController {
     public  Category save(@RequestBody Category p){
         return categoryService.save(p);
     }
+
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public  Category update(@RequestBody Category p){
+        return categoryService.update(p);
+    }
 }
