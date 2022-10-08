@@ -50,11 +50,11 @@ public class Machine implements Serializable {
         this.brand = brand;
     }
 
-    public String getYears() {
+    public String getYear() {
         return years;
     }
 
-    public void setYears(String year) {
+    public void setYear(String year) {
         this.years = year;
     }
 
