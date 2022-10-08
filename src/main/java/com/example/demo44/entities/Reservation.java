@@ -15,14 +15,32 @@ public class Reservation implements Serializable {
     private Date startDate;
     private Date devolutionDate;
 
+    private  String status;
+
+    public Integer getIdReservation() {
+        return idReservation;
+    }
+
+    public void setIdReservation(Integer idReservation) {
+        this.idReservation = idReservation;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     @ManyToOne
-    @JoinColumn(name = "machine")
+    @JoinColumn(name = "machineid")
     @JsonIgnoreProperties("reservations")
     private Machine machine;
 
     @ManyToOne
-    @JoinColumn(name = "client")
-    @JsonIgnoreProperties("reservations")
+    @JoinColumn(name = "clientid")
+    @JsonIgnoreProperties({"reservations","messages"})
     private Client client;
 
 

@@ -18,7 +18,7 @@ public class Machine implements Serializable {
 
     private String brand;
 
-    private  String years;
+    private  Integer years;
 
     private String description;
 
@@ -28,11 +28,11 @@ public class Machine implements Serializable {
     private Category category;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "machine")
-    @JsonIgnoreProperties("machine")
+    @JsonIgnoreProperties({"machines","client"})
     private List<Message> messages;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "machine")
-    @JsonIgnoreProperties("machine")
+    @JsonIgnoreProperties({"machines","messages"})
     private List<Reservation> reservations;
 
     public Integer getId() {
@@ -59,11 +59,11 @@ public class Machine implements Serializable {
         this.brand = brand;
     }
 
-    public String getYear() {
+    public Integer getYear() {
         return years;
     }
 
-    public void setYear(String year) {
+    public void setYear(Integer year) {
         this.years = year;
     }
 

@@ -43,6 +43,15 @@ public class ReservationService {
                     q.get().setStartDate(p.getStartDate());
                 }
 
+                if (p.getStatus()!=null){
+                    q.get().setStatus(p.getStatus());
+                }
+
+                if (p.getIdReservation()!=null){
+                    q.get().setIdReservation(p.getIdReservation());
+                }
+
+
                 if (p.getDevolutionDate()!=null){
                     q.get().setDevolutionDate(p.getDevolutionDate());
                 }
