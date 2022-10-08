@@ -11,26 +11,28 @@ import java.util.Date;
 public class Reservation implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer idReservation;
     private Date startDate;
     private Date devolutionDate;
-
-    @ManyToOne
-    @JoinColumn(name = "client")
-    @JsonIgnoreProperties("reservations")
-    private Client client;
 
     @ManyToOne
     @JoinColumn(name = "machine")
     @JsonIgnoreProperties("reservations")
     private Machine machine;
 
+    @ManyToOne
+    @JoinColumn(name = "client")
+    @JsonIgnoreProperties("reservations")
+    private Client client;
+
+
+
     public Integer getId() {
-        return id;
+        return idReservation;
     }
 
     public void setId(Integer id) {
-        this.id = id;
+        this.idReservation = id;
     }
 
     public Date getStartDate() {

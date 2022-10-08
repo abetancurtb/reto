@@ -16,10 +16,9 @@ public class Machine implements Serializable {
     private String name;
     private String brand;
 
-    private String description;
-
     private String years;
 
+    private String description;
 
     @ManyToOne
     @JoinColumn(name = "categoryid")
