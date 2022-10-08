@@ -1,6 +1,7 @@
 package com.example.demo44.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.http.HttpStatus;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -15,7 +16,7 @@ public class Reservation implements Serializable {
     private Date startDate;
     private Date devolutionDate;
 
-    private  String status;
+    private HttpStatus status = HttpStatus.CREATED;
 
     public Integer getIdReservation() {
         return idReservation;
@@ -25,11 +26,11 @@ public class Reservation implements Serializable {
         this.idReservation = idReservation;
     }
 
-    public String getStatus() {
+    public HttpStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(HttpStatus status) {
         this.status = status;
     }
 
