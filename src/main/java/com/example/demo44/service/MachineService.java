@@ -36,7 +36,7 @@ public class MachineService {
 
 
     public Machine update(Machine p){
-        if (p.getID() == null){
+        if (p.getID() != null){
             Optional<Machine> q = machineRepository.getMachine(p.getID());
             if (q.isPresent()){
                 if (p.getName()!=null){
@@ -47,8 +47,8 @@ public class MachineService {
                     q.get().setBrand(p.getBrand());
                 }
 
-                if (p.getYears()!=null){
-                    q.get().setYear(p.getYears());
+                if (p.getYear()!=null){
+                    q.get().setYear(p.getYear());
                 }
 
                 if (p.getDescription()!=null){

@@ -27,4 +27,10 @@ public class MachineController {
     public  Machine save(@RequestBody Machine p){
         return machineService.save(p);
     }
+
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public  Machine update(@RequestBody Machine p){
+        return machineService.update(p);
+    }
 }
