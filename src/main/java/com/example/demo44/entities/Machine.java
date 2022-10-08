@@ -54,9 +54,8 @@ public class Machine implements Serializable {
         this.brand = brand;
     }
 
-    public Integer getYear() {
-        Integer year = years;
-        return year;
+    public Integer getYears() {
+        return years;
     }
 
     public void setYear(Integer year) {

@@ -41,17 +41,8 @@ public class Reservation implements Serializable {
     @ManyToOne
     @JoinColumn(name = "clientid")
     @JsonIgnoreProperties({"reservations","messages"})
+
     private Client client;
-
-
-
-    public Integer getId() {
-        return idReservation;
-    }
-
-    public void setId(Integer id) {
-        this.idReservation = id;
-    }
 
     public Date getStartDate() {
         return startDate;

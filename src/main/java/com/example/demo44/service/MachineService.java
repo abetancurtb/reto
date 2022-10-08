@@ -47,8 +47,8 @@ public class MachineService {
                     q.get().setBrand(p.getBrand());
                 }
 
-                if (p.getYear()!=null){
-                    q.get().setYear(p.getYear());
+                if (p.getYears()!=null){
+                    q.get().setYear(p.getYears());
                 }
 
                 if (p.getDescription()!=null){
