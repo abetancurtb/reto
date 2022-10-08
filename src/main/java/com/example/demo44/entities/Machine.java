@@ -9,20 +9,22 @@ import java.util.List;
 @Entity
 @Table(name = "machine")
 public class Machine implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private  Integer id;
 
-    private String name;
+    private String  name;
+
     private String brand;
 
-    private String years;
+    private  String years;
 
     private String description;
 
     @ManyToOne
     @JoinColumn(name = "categoryid")
-    @JsonIgnoreProperties("machines")
+    @JsonIgnoreProperties("machine")
     private Category category;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "machine")
