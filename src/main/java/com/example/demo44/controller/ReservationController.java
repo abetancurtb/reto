@@ -34,4 +34,10 @@ public class ReservationController {
     public Reservation update(@RequestBody Reservation p){
         return reservationService.update(p);
     }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public  boolean delete(@PathVariable("id") int id){
+        return reservationService.delete(id);
+    }
 }

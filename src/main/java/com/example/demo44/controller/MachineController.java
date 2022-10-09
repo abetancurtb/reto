@@ -33,4 +33,10 @@ public class MachineController {
     public  Machine update(@RequestBody Machine p){
         return machineService.update(p);
     }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public  boolean delete(@PathVariable("id") int id){
+        return machineService.delete(id);
+    }
 }

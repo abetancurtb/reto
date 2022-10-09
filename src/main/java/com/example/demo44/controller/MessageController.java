@@ -35,4 +35,10 @@ public class MessageController {
         return messageService.update(p);
     }
 
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public  boolean delete(@PathVariable("id") int id){
+        return messageService.delete(id);
+    }
+
 }
