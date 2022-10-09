@@ -1,6 +1,7 @@
 package com.example.demo44.controller;
 
 
+import com.example.demo44.entities.Category;
 import com.example.demo44.entities.Client;
 import com.example.demo44.entities.Library;
 import com.example.demo44.service.ClientService;
@@ -24,8 +25,13 @@ public class ClientController {
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-
     public  Client save(@RequestBody Client p){
         return clientService.save(p);
+    }
+
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Client update(@RequestBody Client p){
+        return clientService.update(p);
     }
 }

@@ -2,6 +2,7 @@ package com.example.demo44.controller;
 
 
 import com.example.demo44.entities.Category;
+import com.example.demo44.entities.Client;
 import com.example.demo44.entities.Message;
 import com.example.demo44.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,4 +28,11 @@ public class MessageController {
     public  Message save(@RequestBody Message p){
         return messageService.save(p);
     }
+
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Message update(@RequestBody Message p){
+        return messageService.update(p);
+    }
+
 }
